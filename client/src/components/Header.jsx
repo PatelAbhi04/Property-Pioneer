@@ -20,11 +20,11 @@ export default function Header() {
     </form>
     <ul className='flex gap-3 space-x-9 '>
     <Link to='/'>
-      <li className='hidden sm:inline text-slate-200 hover:text-slate-800 hover:underline'>Home</li></Link>
+      <li className='font-bold hidden sm:inline text-slate-500 hover:text-slate-800 hover:underline'>Home</li></Link>
       <Link to='about'>
-      <li className='hidden sm:inline text-slate-200 hover:text-slate-800 hover:underline'>About Us</li></Link>
+      <li className='font-bold hidden sm:inline text-slate-500 hover:text-slate-800 hover:underline'>About Us</li></Link>
       <Link to='/sign-in'>
-      <li className=' text-slate-200 hover:text-slate-800 hover:underline'>Sign in</li></Link>
+      <li className='font-bold text-slate-500 hover:text-slate-800 hover:underline'>Sign in</li></Link>
 
 
     </ul>
