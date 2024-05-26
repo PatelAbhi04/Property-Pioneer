@@ -3,12 +3,5 @@
 @tailwind utilities;
 
 body{
-    background-image: url("./images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    
-    justify-content: center;
-    align-items: center;
+    background-color: #979ba8;
 }
