@@ -19,14 +19,14 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("./images/background.jpg");
+    background-image: url("./images/Home5.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    filter: blur(3px);
+    filter: blur(1px);
     /*Adjustthebluramountasneeded*/z-index: -1;
     /*Ensurethepseudo-elementisbehindthecontent*/-webkit-filter: blur(5px);
-    -webkit-filter: blur(3px);
+    -webkit-filter: blur(1px);
 }
 
 .content {

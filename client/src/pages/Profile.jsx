@@ -14,7 +14,7 @@ import {
    deleteUserFailure,
    deleteUserStart,
    deleteUserSuccess,
-  // signOutUserStart,
+   signOutUserStart,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -83,6 +83,21 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(error.message));
+    }
+  };
+
 
 
   const handleFileUpload = (file) => {
@@ -173,13 +188,18 @@ export default function Profile() {
         />
         <button disabled={loading}  className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ?' loading..':'Update'}</button>
 
-      
+        <Link
+          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
+          to={'/create-listing'}
+        >
+          Create Listing
+        </Link>
       </form>
 
       <div className='flex justify-between mt-4'>
        
-        <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete Account</span>
-        <span className='text-red-700 cursor-pointer'>Sign Out</span>
+        <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer font-bold hover:border-4'>Delete Account</span>
+        <span  onClick={handleSignOut}   className='text-red-700 cursor-pointer font-bold hover:border-4'>Sign Out</span>
       </div>
       <p className='text-red-600 mt-4'>{error? error : ''}</p>
       <p className='text-green-600 mt-4 font-bold'>{updateSuccess? 'Success to updation' : ''}</p>
