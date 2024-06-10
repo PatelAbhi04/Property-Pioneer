@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
-    background-color: azure;
+    background-color: #EDE8F5;
+}
+
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid #EDE8F5;
+    animation: typing 4s steps(30, end) 1, blink-caret 0.75s step-end infinite 4s; /* 4 seconds for typing animation, then infinite blinking starting after 4 seconds */
+    -webkit-animation: typing 4s steps(30, end) , blink-caret 0.75s step-end infinite 4s; /* WebKit browsers */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
+
+  #signup {
+    background-color: #ADBBDA;
+}
+#signin{
+    background-color: #ADBBDA;
 }

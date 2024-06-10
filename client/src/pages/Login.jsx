@@ -47,7 +47,7 @@ export default function Login() {
   };
 
   return (
-    <div className='p-3 max-w-lg mx-auto mt-44 backdrop-blur-sm border-4 bg-transparent border-r-teal-300 border-l-teal-300 rounded-2xl'>
+    <div id='signin' className='p-3 max-w-lg mx-auto mt-44 backdrop-blur-sm border-4 bg-transparent border-r-teal-300 border-l-teal-300 rounded-2xl'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
@@ -70,7 +70,7 @@ export default function Login() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-[#3D52A0] text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign In'}
         </button>

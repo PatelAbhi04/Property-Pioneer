@@ -23,17 +23,17 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-slate-200 shadow-md'>
+    <header className=' bg-[#ADBBDA] shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
-            <span className='text-slate-500'>Sahand</span>
-            <span className='text-slate-700'>Estate</span>
+            <span className='text-[#3D5280]'>Property</span>
+            <span className='text-[#7091E6]'>Pioneer</span>
           </h1>
         </Link>
         <form
           onSubmit={handleSubmit}
-          className='bg-slate-100 p-3 rounded-lg flex items-center'
+          className='bg-[#EDE8F5] p-3 rounded-lg flex items-center'
         >
           <input
             type='text'
@@ -48,12 +48,12 @@ export default function Header() {
         </form>
         <ul className='flex gap-4'>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className=' text-[#7091E6] hidden align-middle sm:inline text hover:underline hover:font-bold'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className=' text-[#7091E6] hidden align-middle sm:inline  hover:underline hover:font-bold'>
               About
             </li>
           </Link>
@@ -65,7 +65,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <button className='bg-[#7091E6] text-white rounded-lg p-1 align-middle  hover:opacity-95 disabled:opacity-80'  type='button'>SignIn</button>
             )}
           </Link>
         </ul>
