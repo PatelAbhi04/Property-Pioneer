@@ -209,6 +209,15 @@ export default function Profile() {
           id='password'
           className='border p-3 rounded-lg'
         />
+         <input
+          type='numeric'
+          placeholder={currentUser.contact}
+          onChange={handleChange}
+          id='contact'
+          maxLength={10}
+         
+          className='border p-3 rounded-lg'
+        />
         <button
           disabled={loading}
           className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
@@ -216,21 +225,22 @@ export default function Profile() {
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
+          className='bg-indigo-500 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
           to={'/create-listing'}
         >
-          Create Listing
+          Add Your Property
         </Link>
       </form>
       <div className='flex justify-between mt-5'>
+        
+        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+          Sign out
+        </span>
         <span
           onClick={handleDeleteUser}
           className='text-red-700 cursor-pointer'
         >
           Delete account
-        </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
-          Sign out
         </span>
       </div>
 
@@ -238,22 +248,29 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
-        Show Listings
+      <button onClick={handleShowListings} className='text-2xl text-white bg-[#7091E6] mt-20  rounded-lg p-3 ml-36 hover:text-fuchsia-800'>
+        Your Properties
       </button>
+
+      
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
 
       {userListings && userListings.length > 0 && (
-        <div className='flex flex-col gap-4'>
-          <h1 className='text-center mt-7 text-2xl font-semibold'>
-            Your Listings
+        <div>
+        <div>
+        <h1 className='text-center mt-7 text-2xl font-semibold'>
+            List of Properties
           </h1>
+          </div>
+        <div className='flex flex-col  justify-center'>
+         
           {userListings.map((listing) => (
-            <div
+            
+            <div   
               key={listing._id}
-              className='border rounded-lg p-3 flex justify-between items-center gap-4'
+              className='min-w-96  border-2   bg-[#f4eefc] border-[#f1ecf7]  m-2 p-2 rounded-xl   flex justify-between items-center gap-4'
             >
               <Link to={`/listing/${listing._id}`}>
                 <img
@@ -281,7 +298,9 @@ export default function Profile() {
                 </Link>
               </div>
             </div>
+            
           ))}
+        </div>
         </div>
       )}
     </div>

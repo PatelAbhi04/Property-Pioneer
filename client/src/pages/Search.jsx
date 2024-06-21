@@ -133,7 +133,7 @@ export default function Search() {
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
-              Search Term:
+              Search Here:
             </label>
             <input
               type='text'
@@ -162,9 +162,9 @@ export default function Search() {
                 id='rent'
                 className='w-5'
                 onChange={handleChange}
-                checked={sidebardata.type === 'rent'}
+                checked={sidebardata.type === 'sale'}
               />
-              <span>Rent</span>
+              <span>Sale</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -172,9 +172,9 @@ export default function Search() {
                 id='sale'
                 className='w-5'
                 onChange={handleChange}
-                checked={sidebardata.type === 'sale'}
+                checked={sidebardata.type === 'rent'}
               />
-              <span>Sale</span>
+              <span>Rent</span>
             </div>
             <div className='flex gap-2'>
               <input
@@ -211,20 +211,21 @@ export default function Search() {
             </div>
           </div>
           <div className='flex items-center gap-2'>
-            <label className='font-semibold'>Sort:</label>
+            <label className='font-semibold'>Sort By:</label>
             <select
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
               className='border rounded-lg p-3'
             >
-              <option value='regularPrice_desc'>Price high to low</option>
-              <option value='regularPrice_asc'>Price low to hight</option>
               <option value='createdAt_desc'>Latest</option>
               <option value='createdAt_asc'>Oldest</option>
+              <option value='regularPrice_desc'>Price high to low</option>
+              <option value='regularPrice_asc'>Price low to hight</option>
+              
             </select>
           </div>
-          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
+          <button className='bg-[#7091E6] text-white p-3 rounded-lg uppercase hover:opacity-95'>
             Search
           </button>
         </form>
@@ -235,10 +236,10 @@ export default function Search() {
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>
           {!loading && listings.length === 0 && (
-            <p className='text-xl text-slate-700'>No listing found!</p>
+            <p className='text-xl text-red-600'>No listing found!</p>
           )}
           {loading && (
-            <p className='text-xl text-slate-700 text-center w-full'>
+            <p className='text-xl text-blue-400 text-center w-full'>
               Loading...
             </p>
           )}

@@ -73,6 +73,7 @@ export default function SignUp() {
           placeholder='contact'
           className='border p-3 rounded-lg'
           id='contact'
+          maxLength={10}
           onChange={handleChange}
         />
 

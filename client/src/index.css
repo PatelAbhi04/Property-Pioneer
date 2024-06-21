@@ -33,3 +33,23 @@ body{
 #signin{
     background-color: #ADBBDA;
 }
+
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-in {
+    animation: slideInFromLeft 2s ease-out forwards;
+    -webkit-animation: slideInFromLeft 2s ease-out forwards;
+}
+
+.bg-custom {
+    background-image: url('./images/bc3.jpg');
+  }
+  
