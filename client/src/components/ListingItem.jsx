@@ -25,28 +25,49 @@ export default function ListingItem({ listing }) {
               {listing.address}
             </p>
           </div>
-          <p className='text-sm text-gray-600 line-clamp-2'>
-            {listing.description}
-          </p>
+          <div className=' flex gap-3'>
+          {listing.type === 'rent' && 
+          <p className='bg-[#3D52A0] w-full max-w-[150px] uppercase text-white text-center p-1 rounded-md '>
+            {listing.type}
+          </p>}
+          {listing.type === 'sale' && 
+          <p className='bg-[#7091E6] w-full max-w-[150px] uppercase text-white text-center p-1 rounded-md '>
+            {listing.type}
+          </p>}
+          {listing.offer && 
+          <p className='bg-green-800 w-full max-w-[150px]  text-white text-center p-1 rounded-md '>
+             In Offer 
+          </p>}
+          </div>
+          
           <div className='text-slate-700 flex gap-4'>
-            <div className='font-bold text-xs'>
+            <div className='font-bold text-sm'>
               {listing.bedrooms > 1
                 ? `${listing.bedrooms} beds `
                 : `${listing.bedrooms} bed `}
             </div>
-            <div className='font-bold text-xs'>
+            <div className='font-bold text-sm'>
               {listing.bathrooms > 1
                 ? `${listing.bathrooms} baths `
                 : `${listing.bathrooms} bath `}
             </div>
+            <div className='font-bold text-sm'>
+              {listing.parking ? "Parking" : "No Parking"
+               }
+            </div>
+            <div className='font-bold text-sm'>
+              {listing.furnished? "Funrnished" : "No Furnished"
+               }
+            </div>
           </div>
-          <p className='text-slate-500 mt-2 font-semibold '>
+          <div className='text-green-600 mt-2 font-semibold '>
             $
+           
             {listing.offer
-              ? listing.discountPrice.toLocaleString('en-US')
-              : listing.regularPrice.toLocaleString('en-US')}
-            {listing.type === 'rent' && ' / month'}
-          </p>
+               ?<span className='text-nowrap'  ><span>{listing.discountPrice.toLocaleString('en-US')}</span>  <span className='line-through opacity-50 text-sm'>${listing.regularPrice.toLocaleString('en-US')}</span></span>:
+               listing.regularPrice.toLocaleString('en-US')}
+               {listing.type === 'rent' && ' / month'} 
+          </div>
          
         </div>
       </Link>

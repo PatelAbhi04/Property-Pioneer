@@ -23,7 +23,8 @@ const userSchema = new mongoose.Schema(
         contact:{
             required:true,
             type:Number,
-            unique:true
+            unique:true,
+            
 
 
         },
