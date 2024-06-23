@@ -1,5 +1,5 @@
 // src/components/AboutUs.js
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {  FaLinkedin, FaTwitter } from "react-icons/fa";
 import {
   MdEmail
 } from "react-icons/md";
