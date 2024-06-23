@@ -78,7 +78,7 @@ export default function Home() {
                     secure your legacy with{" "}
                     <span className="text-slate-800">Property Pioneer</span>
                   </h1>
-                  <div className="text-slate-900 font  sm:text-2xl animated-text">
+                  <div className="text-slate-900 font  sm:text-1.5xl  animated-text">
                     Property Pioneer is the best place to find your next perfect
                     place to live. We have a wide range of properties for you to
                     choose from.
