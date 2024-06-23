@@ -25,7 +25,6 @@ const __dirname = path.resolve();
 app.use("/api/user",userRouter);
 app.use("/api/auth",authRouter);
 app.use("/api/listing",listingRouter);
-
 app.use(express.static(path.join(__dirname, '/client/dist')));
 
 app.get('*', (req, res) => {
